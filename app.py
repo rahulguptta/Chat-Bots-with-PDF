@@ -5,7 +5,7 @@ STATE = {}
 import streamlit as st
 import os
 from langchain_groq import ChatGroq
-from langchain_community.embeddings import HuggingFaceInferenceAPIEmbeddings
+rom langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_classic.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
@@ -50,10 +50,15 @@ def create_vector_embeddings():
   pdf_dir = "/content/sample_data/research_papers" if running_on_local else "research_papers"
 
   if "vectors" not in store:
-    embeddings = HuggingFaceInferenceAPIEmbeddings(
-      api_key=st.secrets["HF_TOKEN"],
-      model_name="sentence-transformers/all-MiniLM-L6-v2"
-    )
+    @st.cache_resource(show_spinner=False)
+    def get_embedder():
+      emb = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+      test_vec = emb.embed_query("hello world")
+      assert isinstance(test_vec, list) and len(test_vec) > 0, "Embedding model returned empty vector."
+      st.write(f"✅ Embedding dim: {len(test_vec)}")
+      return emb
+    embeddings = get_embedder()
+
     loader = PyPDFDirectoryLoader(pdf_dir)
     docs = loader.load()
     text_splitter = RecursiveCharacterTextSplitter(
