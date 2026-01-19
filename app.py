@@ -110,18 +110,19 @@ engine = "llama-3.1-8b-instant"
 temperature = 0.7
 max_tokens = 150
 
-while True:
-  user_prompt = input("user: ").strip()
-  if user_prompt.lower() in ['q', 'quit', 'break', 'exit']:
-    break
-  if not user_prompt:
-    continue
-  generate_response(
-      user_prompt = user_prompt,
-      engine = engine,
-      api_key = api_key,
-      running_on_local = True
-  )
+if running_on_local:
+  while True:
+    user_prompt = input("user: ").strip()
+    if user_prompt.lower() in ['q', 'quit', 'break', 'exit']:
+      break
+    if not user_prompt:
+      continue
+    generate_response(
+        user_prompt = user_prompt,
+        engine = engine,
+        api_key = api_key,
+        running_on_local = True
+    )
 
 else:
   st.title("ChatBots")
