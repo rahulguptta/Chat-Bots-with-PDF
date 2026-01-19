@@ -21,7 +21,7 @@ if running_on_local:
   HF_TOKEN = os.getenv("HF_TOKEN")
 else:
   api_key = st.secrets["GROQ_API_KEY"]
-  HF_TOKEN = st.secrests["HF_TOKEN"]
+  HF_TOKEN = st.secrets["HF_TOKEN"]
 
 # Langsmiteh tracking
 if running_on_local:
