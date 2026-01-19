@@ -50,7 +50,10 @@ def create_vector_embeddings():
   pdf_dir = "/content/sample_data/research_papers" if running_on_local else "research_papers"
 
   if "vectors" not in store:
-    embeddings = HuggingFaceInferenceAPIEmbeddings(model_name="all-MiniLM-L6-v2")
+    embeddings = HuggingFaceInferenceAPIEmbeddings(
+      api_key=st.secrets["HF_TOKEN"],
+      model_name="sentence-transformers/all-MiniLM-L6-v2"
+    )
     loader = PyPDFDirectoryLoader(pdf_dir)
     docs = loader.load()
     text_splitter = RecursiveCharacterTextSplitter(
