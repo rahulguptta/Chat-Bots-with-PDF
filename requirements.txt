@@ -1,0 +1,12 @@
+langchain
+langchain-core
+langchain-community
+langchain-classic
+langchain-huggingface
+langchain-groq
+bs4
+streamlit
+langchain-text-splitters
+faiss-cpu==1.8.0.post1
+langchain-chroma
+pypdf
