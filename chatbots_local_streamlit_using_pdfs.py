@@ -169,9 +169,14 @@ if running_local:
                       api_key = api_key,
                       running_local = True)
 else:
-  user_prompt = st.text_input("user: ").strip()
-  generate_response(
-      user_prompt = user_prompt,
-      engine = engine,
-      api_key= api_key
-  )
+    while True:
+        user_prompt = input("user: ").strip()
+        if user_prompt.lower() in ["quit", 'q', 'break', 'exit']:
+          break
+        if not user_prompt:
+          continue
+      generate_response(
+          user_prompt = user_prompt,
+          engine = engine,
+          api_key= api_key
+      )
