@@ -50,6 +50,20 @@ else:
 LANGCHAIN_TRACING_V2 = "true"
 LANGCHAIN_PROJECT ="ChatBots_Local_Streamlit_using_PDFs"
 
+#
+prompt = ChatPromptTemplate.from_template(
+    """
+    Answer the question based only on the provided context.
+    Please provide the most accurate response based on the question.
+
+    <context>
+    {context}
+    </context>
+
+    Question: {input}
+    """
+)
+
 # model and parameters
 if running_local:
   engine = "llama-3.1-8b-instant"
@@ -140,18 +154,6 @@ def generate_response(user_prompt, api_key, engine, prompt = prompt, running_loc
         for i, doc in enumerate(response['context']):
           st.write(doc.page_content)
 
-prompt = ChatPromptTemplate.from_template(
-    """
-    Answer the question based only on the provided context.
-    Please provide the most accurate response based on the question.
-
-    <context>
-    {context}
-    </context>
-
-    Question: {input}
-    """
-)
 
 # Question and anwer loop
 api_key = specific_key if specific_key else api_key
