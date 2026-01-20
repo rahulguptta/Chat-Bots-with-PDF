@@ -90,7 +90,7 @@ else:
 
 # Functions for storing vector db
 def create_vector_embeddings(running_local = False):
-  store = STATE if running_local else st.session.state
+  store = STATE if running_local else st.session_state
   pdf_dir = "/content/sample_data/research_papers" if running_local else "research_papers"
 
   @st.cache_resource(show_spinner=False) #Streamlit caching decorator used to cache expensive resources so they are created only once per app session, without showing the loading spinner
@@ -119,13 +119,13 @@ def create_vector_embeddings(running_local = False):
   store["vectors"] = vectors
 
 def load_vector_store(running_local = False):
-  store = STATE if running_local else st.session.state
+  store = STATE if running_local else st.session_state
   if "vectors" not in store:
     create_vector_embeddings(running_local)
 
 # Function to generate response
 def generate_response(user_prompt, api_key, engine, prompt = prompt, running_local = False):
-  store = STATE if running_local else st.session.state
+  store = STATE if running_local else st.session_state
   llm = ChatGroq(model = engine,
                  groq_api_key = api_key)
   document_chain = create_stuff_documents_chain(llm, prompt)
