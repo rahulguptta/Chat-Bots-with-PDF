@@ -14,9 +14,10 @@ specific_key = False
 
 # Installing required packages
 if running_local:
-  !pip install -r requirements.txt -q
-  #%pip install --force-reinstall "numpy<2.0"
-  print("installation done")
+  subprocess.run(
+        [sys.executable, "-m", "pip", "install", "-r", "requirements.txt", "-q"],
+        check=True
+    )
 
 # Importing required libraries
 import streamlit as st
