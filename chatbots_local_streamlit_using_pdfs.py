@@ -167,7 +167,7 @@ if running_local:
                       running_local = True)
 else:
   user_prompt = st.text_input("user: ").strip()
-  generate_response(\
+  generate_response(
       user_prompt = user_prompt,
       engine = engine,
       api_key= api_key
