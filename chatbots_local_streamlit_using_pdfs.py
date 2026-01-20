@@ -175,8 +175,7 @@ else:
           break
         if not user_prompt:
           continue
-      generate_response(
-          user_prompt = user_prompt,
-          engine = engine,
-          api_key= api_key
-      )
+        generate_response(
+            user_prompt = user_prompt,
+            engine = engine,
+            api_key= api_key)
