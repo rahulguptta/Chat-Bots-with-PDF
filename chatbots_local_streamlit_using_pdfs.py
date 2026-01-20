@@ -44,8 +44,8 @@ if running_local:
   LANGCHAIN_API_KEY = os.getenv("LANGCHAIN_API_KEY")
 
 else:
-  api_key = st.secrets("GROQ_API_KEY")
-  HF_TOKEN = st.secrets("HF_TOKEN")
+  api_key = st.secrets["GROQ_API_KEY"]
+  HF_TOKEN = st.secrets["HF_TOKEN"]
 
 LANGCHAIN_TRACING_V2 = "true"
 LANGCHAIN_PROJECT ="ChatBots_Local_Streamlit_using_PDFs"
