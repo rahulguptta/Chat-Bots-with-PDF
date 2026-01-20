@@ -73,7 +73,7 @@ else:
   st.title("ChatBots Using PDFs")
   st.write("Fire a question")
   st.sidebar.title("Settings")
-  st.sidebar.selectbox(
+  engine = st.sidebar.selectbox(
       label = "Select LLM Model",
       options = ["llama-3.1-8b-instant", "qwen/qwen3-72B"],
       index = 0
