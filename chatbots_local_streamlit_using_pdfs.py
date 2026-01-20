@@ -8,7 +8,7 @@ Original file is located at
 """
 
 # Setting for local and stream lit
-running_local = True # plateform identifier
+running_local = False # plateform identifier
 STATE = {} # vector DB store
 specific_key = False
 
