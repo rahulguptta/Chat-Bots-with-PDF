@@ -64,10 +64,10 @@ else:
       options = ["llama-3.1-8b-instant", "qwen/qwen3-72B"],
       index = 0
   )
-  specific_key = st.sidebar.text_input(label = "Specific_key(optional): ", type = "password")
+  specific_key = st.sidebar.text_input(label = "Specific_key(optional)", type = "password")
   temperature = st.sidebar.slider(label = "Temperature",
-                                  min_value = 0,
-                                  max_value = 1,
+                                  min_value = 0.0,
+                                  max_value = 1.0,
                                   value = 0.7)
   max_tokens = st.sidebar.slider(label = "Max Tokens",
                                  min_value = 50,
