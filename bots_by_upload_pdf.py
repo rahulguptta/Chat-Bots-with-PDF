@@ -104,7 +104,7 @@ if uploaded_files:
       [
           ("system", system_prompt),
           MessagesPlaceholder("chat_history"),
-          ("human", "input")
+          ("human", "{input}")
       ]
   )
 
