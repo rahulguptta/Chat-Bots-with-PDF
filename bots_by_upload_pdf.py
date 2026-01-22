@@ -33,7 +33,7 @@ if uploaded_files:
 
 # Models
 llm = ChatGroq(
-    model = "Gemma2-9b-It",
+    model = "llama-3.1-8b-instant",
     #groq_api_key = GROQ_API_KEY
     groq_api_key = st.secrets["GROQ_API_KEY"]
 )
