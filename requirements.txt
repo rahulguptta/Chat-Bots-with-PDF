@@ -7,7 +7,7 @@ langchain-huggingface
 langchain-groq
 bs4
 langchain-text-splitters
-faiss-cpu==1.8.0.post1
+faiss-cpu
 langchain-chroma
 pypdf
 langchain_classic
