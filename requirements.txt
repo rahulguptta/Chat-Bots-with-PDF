@@ -11,3 +11,4 @@ faiss-cpu
 langchain-chroma
 pypdf
 langchain_classic
+sentence-transformers
