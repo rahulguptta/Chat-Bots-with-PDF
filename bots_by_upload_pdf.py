@@ -83,7 +83,7 @@ if uploaded_files:
           ("human", "{input}")
       ]
   )
-  history_aware_retriever = create_history_aware_retriver(
+  history_aware_retriever = create_history_aware_retriever(
       llm = llm,
       retriever = retriever,
       prompt = contextualized_q_prompt
