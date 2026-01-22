@@ -137,4 +137,4 @@ if user_input:
 
     st.write(st.session_state.store)
     st.write("Assistant: ", response["answer"])
-    st.write("chat history: " session_history.messages)
+    st.write("chat history: ", session_history.messages)
