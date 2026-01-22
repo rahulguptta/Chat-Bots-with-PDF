@@ -8,7 +8,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_classic.chains.combine_documents import create_stuff_documents_chain
-from langchain_classic.chains import create_retrieval_chain
+from langchain_classic.chains import create_retrieval_chain, create_history_aware_retriever
 from langchain_core.runnables.history import RunnableWithMessageHistory
 
 # setting up streamlit titles and input
