@@ -40,9 +40,7 @@ llm = ChatGroq(
 
 HF_TOKEN = st.secrets["HF_TOKEN"]
 
-embeddings = HuggingFaceEmbeddings(
-    model_name = "all-MiniLM-L6-v2"
-)
+embeddings = HuggingFaceEmbeddings(model_name = "sentence-transformers/all-MiniLM-L6-v2")
 
 # Prcessing uploaded pdf
 if uploaded_files:
