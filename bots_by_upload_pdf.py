@@ -35,7 +35,6 @@ if uploaded_files:
 # initializations
 retriever = False
 history_aware_retriever = False
-user_input = False
 
 # keys
 groq_api_key = st.secrets["GROQ_API_KEY"]
