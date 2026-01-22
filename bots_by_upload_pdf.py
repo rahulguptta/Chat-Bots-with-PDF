@@ -124,7 +124,7 @@ if history_aware_retriever:
       retriever = history_aware_retriever,
       combine_docs_chain = question_answer_chain
   )
-  conversational_rag_chain = RunnableWithChatHistory(
+  conversational_rag_chain = RunnableWithMessageHistory(
       rag_chain = rag_chain,
       input_message_key = "input",
       history_message_key = "chat_history",
