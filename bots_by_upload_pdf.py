@@ -36,6 +36,7 @@ if uploaded_files:
 # initializations
 retriever = False
 history_aware_retriever = False
+chain_ready = False
 
 # keys
 groq_api_key = st.secrets["GROQ_API_KEY"]
@@ -130,9 +131,10 @@ if history_aware_retriever:
       get_session_history = get_session_history,
       output_messages_key = "answer"
   )
+  chain_ready = True
 
 # invoking
-if user_input:
+if user_input and chain_ready:
     session_history = get_session_history(session_id)
     response = conversational_rag_chain.invoke(
         {"input":user_input},
