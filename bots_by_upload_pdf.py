@@ -126,9 +126,9 @@ if history_aware_retriever:
   )
   conversational_rag_chain = RunnableWithMessageHistory(
       runnable = rag_chain,
-      input_message_key = "input",
-      get_session_history = "chat_history",
-      output_message_key = "answer"
+      input_messages_key = "input",
+      get_session_history = get_session_history,
+      output_messages_key = "answer"
   )
 
 # invoking
