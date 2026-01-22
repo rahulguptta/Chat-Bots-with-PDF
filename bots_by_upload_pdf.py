@@ -43,9 +43,7 @@ llm = ChatGroq(
     groq_api_key = groq_api_key
 )
 
-embeddings = HuggingFaceEmbeddings(
-    model_name = "all-MiniLM-L6-v2"
-)
+embeddings = HuggingFaceEmbeddings(model_name = "sentence-transformers/all-MiniLM-L6-v2")
 
 # Prcessing uploaded pdf
 if uploaded_files:
