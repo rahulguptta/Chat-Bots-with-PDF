@@ -34,8 +34,11 @@ if uploaded_files:
 # Models
 llm = ChatGroq(
     model = "Gemma2-9b-It",
-    groq_api_key = GROQ_API_KEY
+    #groq_api_key = GROQ_API_KEY
+    groq_api_key = st.secrets["GROQ_API_KEY"]
 )
+
+HF_TOKEN = st.secrets["HF_TOKEN"]
 
 embeddings = HuggingFaceEmbeddings(
     model_name = "all-MiniLM-L6-v2"
