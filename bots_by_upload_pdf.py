@@ -33,10 +33,14 @@ if uploaded_files:
 
   user_input = st.text_input("Your question ")
 
+# keys
+groq_api_key = st.sectests(GROQ_API_KEY)
+HF_TOKEN = st.sectrets(HF_TOKEN)
+
 # Models
 llm = ChatGroq(
     model = "Gemma2-9b-It",
-    groq_api_key = GROQ_API_KEY
+    groq_api_key = groq_api_key
 )
 
 embeddings = HuggingFaceEmbeddings(
