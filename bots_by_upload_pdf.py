@@ -32,6 +32,10 @@ if uploaded_files:
     return st.session_state.store[session_id]
 
   user_input = st.text_input("Your question ")
+# initializations
+retriever = False
+history_aware_retriever = False
+user_input = False
 
 # keys
 groq_api_key = st.secrets["GROQ_API_KEY"]
