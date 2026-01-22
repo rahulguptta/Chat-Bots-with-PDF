@@ -125,9 +125,9 @@ if history_aware_retriever:
       combine_docs_chain = question_answer_chain
   )
   conversational_rag_chain = RunnableWithMessageHistory(
-      rag_chain = rag_chain,
+      runnable = rag_chain,
       input_message_key = "input",
-      history_message_key = "chat_history",
+      get_session_history = "chat_history",
       output_message_key = "answer"
   )
 
