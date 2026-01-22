@@ -12,6 +12,7 @@ from langchain_classic.chains import create_retrieval_chain, create_history_awar
 from langchain_core.runnables.history import RunnableWithMessageHistory
 
 # setting up streamlit titles and input
+user_input = "Hi"
 st.title("Conversational RAG with PDF uploads and chat history")
 st.write("Upload pdf's and chat with their content")
 session_id = st.text_input(label = "Session ID",
