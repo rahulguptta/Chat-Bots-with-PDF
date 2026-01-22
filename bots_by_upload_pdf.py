@@ -118,9 +118,9 @@ if uploaded_files:
   )
   conversational_rag_chain = RunnableWithMessageHistory(
       runnable = rag_chain,
-      input_message_key = "input",
+      input_messages_key = "input",
       get_session_history = get_session_history,
-      output_message_key = "answer"
+      output_messages_key = "answer"
   )
   user_input = st.text_input("Your question ")
   # invoking
