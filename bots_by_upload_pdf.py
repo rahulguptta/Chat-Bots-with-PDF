@@ -34,8 +34,8 @@ if uploaded_files:
   user_input = st.text_input("Your question ")
 
 # keys
-groq_api_key = st.sectests(GROQ_API_KEY)
-HF_TOKEN = st.sectrets(HF_TOKEN)
+groq_api_key = st.sectets(GROQ_API_KEY)
+HF_TOKEN = st.sectets(HF_TOKEN)
 
 # Models
 llm = ChatGroq(
