@@ -26,12 +26,12 @@ uploaded_files = st.file_uploader(
     accept_multiple_files = True
 )
 
-if uploaded_files:
-  def get_session_history(session_id):
+def get_session_history(session_id):
     if session_id not in st.session_state.store:
       st.session_state.store[session_id] = ChatMessageHistory()
     return st.session_state.store[session_id]
 
+if uploaded_files:
   user_input = st.text_input("Your question ")
 # initializations
 retriever = False
