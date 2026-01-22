@@ -69,7 +69,7 @@ if uploaded_files:
   splits = text_splitter.split_documents(documents)
   vectorstore = FAISS.from_documents(
       documents = splits,
-      embeddings = embeddings
+      embedding = embeddings
   )
   retriever = vectorstore.as_retriever()
 
