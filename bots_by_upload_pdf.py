@@ -86,7 +86,7 @@ contextualized_q_prompt = ChatPromptTemplate.from_messages(
     ]
 )
 
-if retriver:
+if retriever:
   history_aware_retriever = create_history_aware_retriver(
       llm = llm,
       retriever = retriever,
